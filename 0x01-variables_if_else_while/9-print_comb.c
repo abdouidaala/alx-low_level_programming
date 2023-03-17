@@ -11,10 +11,10 @@ int main(void)
 
 	for (i = 48; i <= 57; i++)
 	{
-		putchart(i);
-		putchart(44);
-		putchart(32);
+		putchar(i);
+		putchar(44);
+		putchar(32);
 	}
-	putchart('\n');
+	putchar('\n');
 	return (0);
 }
