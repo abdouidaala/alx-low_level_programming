@@ -2,7 +2,8 @@
 
 /**
   * main - Entry point
-  * 
+  * print all single digits
+  * use putchar function
   * Return: Always 0 (Success)
   */
 int main(void)
