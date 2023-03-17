@@ -19,7 +19,6 @@ int main(void)
 	int a = (n > 5);
 	int b = (n == 0);
 	int c = (n < 6 && n != 0);
-
 	if (a)
 	{
 		printf("Last digit of %d is %d and is greater than 5\n", n, a);
