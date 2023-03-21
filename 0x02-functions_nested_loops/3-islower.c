@@ -1,11 +1,7 @@
 #include "main.h"
 
-int main(void)
+int _islower(int r)
 {
-	int r;
-
-	r = _islower(int ch);
-
 	if (r != 0)
 	{
 		_putchar('1');
