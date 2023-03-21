@@ -7,6 +7,12 @@
   */
 int main(void)
 {
-	print_alphabet();
+	int ch;
+
+	for (ch = 97; ch <= 122; ch++)
+	{
+		print_alphabet(_putchar(ch));
+	}
+	_putchar('\n');
 	return (0);
 }
