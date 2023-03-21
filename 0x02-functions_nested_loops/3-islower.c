@@ -3,9 +3,8 @@
 int main(void)
 {
 	int r;
-	int ch;
 
-	r = _islower(ch);
+	r = _islower(int ch);
 
 	if (r != 0)
 	{
