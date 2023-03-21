@@ -3,7 +3,7 @@
 int main(void)
 {
 	int r;
-	char ch;
+	int ch;
 
 	r = _islower(ch);
 
