@@ -1,4 +1,3 @@
-#include <unistd.h>
 #ifndef HEADER_FILE
 #define HEADER_FILE
 
@@ -10,8 +9,5 @@
   * On error, -1 is returned, and errno is set appropriately.
   */
 int _putchar(char a)
-{
-	return (write(1, &a, 1));
-}
 
 #endif
