@@ -7,12 +7,7 @@
   */
 int main(void)
 {
-	int ch;
-
-	for (ch = 97; ch <= 122; ch++)
-	{
-		_putchar(print_alphabet(ch));
-	}
+	_putchar(print_alphabet());
 	_putchar('\n');
 	return (0);
 }
