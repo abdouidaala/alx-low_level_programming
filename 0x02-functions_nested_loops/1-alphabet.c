@@ -11,7 +11,7 @@ int main(void)
 
 	for (ch = 97; ch <= 122; ch++)
 	{
-		print_alphabet(_putchar(ch));
+		_putchar(print_alphabet(ch));
 	}
 	_putchar('\n');
 	return (0);
