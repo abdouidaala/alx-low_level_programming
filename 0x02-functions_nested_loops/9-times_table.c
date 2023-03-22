@@ -11,9 +11,10 @@ void times_table(void)
 
 	for (i = 48; i <= 57; i++)
 	{
+		r = _putchar(i);
 		for (j = 48; j <= 57; j++)
 		{
-			r = _putchar(i);
+			_putchar(r);
 			if (j < 57)
 			{
 				_putchar(44);
