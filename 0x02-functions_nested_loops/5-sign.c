@@ -8,7 +8,7 @@
  * Return: 1 (is greater that zero) OR 0 (is zero)
  * OR -1 (is less that zero)
  */
-int int print_sign(int r)
+int print_sign(int r)
 {
 	if (r > 0)
 	{
