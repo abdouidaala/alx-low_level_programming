@@ -7,15 +7,14 @@
  */
 void times_table(void)
 {
-	int i, j, x, y;
+	int i, j, x;
 
 	for (i = 48; i <= 57; i++)
 	{
 		x = _putchar(i);
 		for (j = 48; j <= 57; j++)
 		{
-			y = _putchar(j);
-			_putchar(x * y);
+			_putchar(x * j);
 			if (j < 57)
 			{
 				_putchar(44);
