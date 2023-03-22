@@ -9,13 +9,16 @@
  */
 int print_last_digit(int r)
 {
+	int l-digit;
+
 	if (r < 0)
 	{
-		r *= -1;
-		return (r % 10);
+		l-digit = (r *= -1) % 10;
+		return (last-d);
 	}
 	else
 	{
-		return ((r % 10));
+		l-digit = r % 10;
+		return (l-digit);
 	}
 }
