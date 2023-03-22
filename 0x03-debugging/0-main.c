@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdlib.h>
+#include <time.h>
 
 /**
   * main - tests function that prints:
@@ -11,6 +13,5 @@ int main(void)
 
 	i = 98;
 	positive_or_negative(i);
-
 	return (0);
 }
