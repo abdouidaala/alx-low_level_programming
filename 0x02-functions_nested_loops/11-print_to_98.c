@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 /**
- * * print_times_table - Print the n times table
+ * print_to_98 - Prints numbers from n to 98.
  *
- * @n: number times table table (0 < n<= 15)
+ * @n: Theinput number.
  *
- * Return: no return
+ * Return: no return.
  */
 void print_to_98(int n)
 {
