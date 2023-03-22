@@ -9,5 +9,12 @@
  */
 int _abs(int r)
 {
-	return (r);
+	if (r < 0)
+	{
+		return (r);
+	}
+	else
+	{
+		return (r);
+	}
 }
