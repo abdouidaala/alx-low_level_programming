@@ -9,12 +9,18 @@
  */
 int print_last_digit(int r)
 {
+	int d;
+
 	if (r < 0)
 	{
-		return (((r % 10) * (-1)) | r);
+		d = (r * (-1)) % 10;
+		_putchar(d + '0');
+		return (d);
 	}
 	else
 	{
-		return ((r % 10) | r);
+		d = r % 10;
+		_putchar(d + '0');
+		return (d);
 	}
 }
