@@ -11,9 +11,7 @@ int print_last_digit(int r)
 {
 	if (r < 0)
 	{
-		int l-digit;
-		l-digit = (r % 10) * -1;
-		return (last-d);
+		return ((- 1 * r) % 10);
 	}
 	else
 	{
