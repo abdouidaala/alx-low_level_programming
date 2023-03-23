@@ -3,7 +3,7 @@
 /**
  * _isupper - Checks for uppercase character
  *
- * @r: Number to be checked
+ * @c: Number to be checked
  *
  * Return: 1 (Success) OR 0 (Failure)
  */
