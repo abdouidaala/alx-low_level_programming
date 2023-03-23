@@ -12,14 +12,9 @@ void print_most_numbers(void)
 
 	while (i <= 57)
 	{
-		switch (i)
+		if (i != 50 && i != 52)
 		{
-			case 50:
-				continue;
-			case 52:
-				continue;
-			default:
-				_putchar(i);
+			_putchar(i);
 		}
 		i++;
 	}
