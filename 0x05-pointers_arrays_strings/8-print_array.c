@@ -1,6 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * print_array - print elements of an array
+ *
+ * @a: The array
+ * @n: The number of elements in the array
+ *
+ * Return: void
+ */
 void print_array(int *a, int n)
 {
 	int i;
