@@ -12,5 +12,4 @@ void rev_string(char* s) {
 		s[i] = s[len - 1 - i];
 		s[len - 1 - i] = c;
 	}
-	putchar('\n');
 }
