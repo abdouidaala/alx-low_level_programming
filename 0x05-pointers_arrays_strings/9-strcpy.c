@@ -5,5 +5,4 @@
 char* _strcpy(char* dest, char* src)
 {
 	strcpy(dest, src);
-	puts(dest);
 }
