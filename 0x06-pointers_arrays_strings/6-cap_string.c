@@ -17,9 +17,7 @@ char *cap_string(char *str)
 	for (i = 0; i < len; i++)
 	{
 		if (isspace(str[i - 1])
-		{
 			str[i] = toupper(str[i]);
-		}
 	}
 
 	return (str);
