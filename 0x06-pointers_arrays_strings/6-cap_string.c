@@ -10,16 +10,13 @@
  */
 char *cap_string(char *str)
 {
-	int i, len, j;
-	char str2[13] = {',', '.', ';', '!', '?',
-			'"', '(', ')', '{', '}',
-			' ', '\n', '\t'};
+	int i, len;
 
 	len = strlen(str);
 
 	for (i = 0; i < len; i++)
 	{
-		for (str[i - 1] == str2[j])
+		if (str[i - 1] == ' ')
 		{
 			str[i] = toupper(str[i]);
 		}
