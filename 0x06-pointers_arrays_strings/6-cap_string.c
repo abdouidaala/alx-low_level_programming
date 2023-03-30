@@ -42,8 +42,6 @@ char *cap_string(char *str)
 				str[i] = toupper(str[i]);
 			case 125:
 				str[i] = toupper(str[i]);
-			default:
-				break;
 		}
 	}
 
