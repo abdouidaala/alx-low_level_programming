@@ -10,7 +10,8 @@
  */
 char *cap_string(char *str)
 {
-	int i, len;
+	int i, len, j;
+	char str2[10] = ",;.!?(){}\"";
 
 	len = strlen(str);
 
@@ -19,6 +20,13 @@ char *cap_string(char *str)
 		if (isspace(str[i - 1])
 			str[i] = toupper(str[i]);
 	}
+		for (j = 0; j < strlen(str2); j++)
+		{
+			if (str[i - 1] == str2[j])
+			{
+				str[i] = toupper(str[i]);
+			}
+		}
 
 	return (str);
 }
