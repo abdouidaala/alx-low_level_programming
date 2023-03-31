@@ -10,17 +10,20 @@
  */
 char *cap_string(char *str)
 {
-	int i;
+	int i, j;
+	char va[13] = {" ", "\n", "\t", ".",
+			",", ";", "?", "!",
+			"\"", "{", "}",
+			"(", ")"};
 
 	for (i = 0; i != '\0'; i++)
 	{
-		if (str[i - 1] == ' ' || str[i - 1] == '\n' || str[i - 1] == '\t'
-			|| str[i - 1] == '.' || str[i - 1] == ',' || str[i - 1] == ';'
-			|| str[i - 1] == '"' || str[i - 1] == '!' || str[i - 1] == '?'
-			|| str[i - 1] == '(' || str[i - 1] == ')' || str[i - 1] == '{'
-			|| str[i - 1] == '}')
+		for (j = 0; j < 13; j++)
 		{
-			str[i] = toupper(str[i]);
+			if (str[i] == va[j])
+			{
+				str[i + 1] = toupper(str[i + 1]);
+			}
 		}
 	}
 
