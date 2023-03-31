@@ -10,11 +10,9 @@
  */
 char *cap_string(char *str)
 {
-	int i, len;
+	int i;
 
-	len = strlen(str);
-
-	for (i = 0; i < len; i++)
+	for (i = 0; i != '\0'; i++)
 	{
 		if (str[i - 1] == ' ' || str[i - 1] == '\n' || str[i - 1] == '\t'
 			|| str[i - 1] == '.' || str[i - 1] == ',' || str[i - 1] == ';'
