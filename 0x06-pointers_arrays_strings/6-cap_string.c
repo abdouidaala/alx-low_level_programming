@@ -16,10 +16,11 @@ char *cap_string(char *str)
 
 	for (i = 0; i < len; i++)
 	{
-		if (isspace(str[i - 1]) || str[i - 1] == '.' || str[i - 1] == ','
-			|| str[i - 1] == ';' || str[i - 1] == '"' || str[i - 1] == '!'
-			|| str[i - 1] == '?' || str[i - 1] == '(' || str[i - 1] == ')'
-			|| str[i - 1] == '{' || str[i - 1] == '}')
+		if (str[i - 1] == ' ' || str[i - 1] == '\n' || str[i - 1] == '\t'
+			|| str[i - 1] == '.' || str[i - 1] == ',' || str[i - 1] == ';'
+			|| str[i - 1] == '"' || str[i - 1] == '!' || str[i - 1] == '?'
+			|| str[i - 1] == '(' || str[i - 1] == ')' || str[i - 1] == '{'
+			|| str[i - 1] == '}')
 		{
 			str[i] = toupper(str[i]);
 		}
