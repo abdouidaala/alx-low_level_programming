@@ -12,12 +12,7 @@
  */
 int main(int argc, char *argv[])
 {
-	if (argc < 2)
-	{
-		printf("Error");
-		return (1);
-	}
-	else
+	if (argc >= 2)
 	{
 		int mul, num1, num2;
 
@@ -26,6 +21,11 @@ int main(int argc, char *argv[])
 		mul = num1 * num2;
 
 		printf("%d\n", mul);
+	}
+	else
+	{
+		printf("Error");
+		return (1);
 	}
 	return (0);
 }
