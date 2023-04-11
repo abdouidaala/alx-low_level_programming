@@ -3,12 +3,9 @@
 
 char *create_array(unsigned int size, char c)
 {
-	if (size == 0)
-		return (NULL);
-
 	char *p = malloc(size * sizeof(c));
 
-	if (p == NULL)
+	if (p == NULL || size == 0)
 		return (NULL);
  
 	unsigned int i;
