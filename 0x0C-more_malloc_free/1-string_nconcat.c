@@ -3,7 +3,8 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int count = 0, i, j;
+	int count = 0;
+	unsigned int i, j;
 	char *ptr;
 
 	while (s1[count])
