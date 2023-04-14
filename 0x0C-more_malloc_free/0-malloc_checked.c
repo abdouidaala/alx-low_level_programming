@@ -3,7 +3,7 @@
 
 void *malloc_checked(unsigned int b)
 {
-	unsigned int *a = malloc(sizeof(int) * b);
+	int *a = malloc(sizeof(unsigned int) * b);
 
 	return (a);
 }
