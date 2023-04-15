@@ -6,6 +6,12 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	int *ptr;
 
+	if (nmemb == 0 || size == 0)
+	{
+		exit(EXIT_FAILURE);
+		return (NULL);
+	}
+
 	ptr = malloc(nmemb * size);
 
 	memset(ptr, 0, nmemb * size);
@@ -13,10 +19,5 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (ptr == NULL)
 		return (NULL);
 
-	if (nmemb == 0 || size == 0)
-	{
-		exit(EXIT_FAILURE);
-		return (NULL);
-	}
 	return (ptr);
 }
