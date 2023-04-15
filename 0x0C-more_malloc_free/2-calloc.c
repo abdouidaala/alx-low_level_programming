@@ -12,6 +12,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 
 	if (nmemb == 0 || size == 0)
+	{
 		exit(EXIT_FAILURE);
+		return (NULL);
+	}
 	return (ptr);
 }
