@@ -4,7 +4,9 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *ptr = malloc(nmemb * size);
+	int *ptr;
+
+	ptr = malloc(nmemb * size);
 
 	memset(ptr, 0, nmemb * size);
 
