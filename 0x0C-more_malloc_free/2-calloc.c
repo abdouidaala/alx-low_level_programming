@@ -3,7 +3,7 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int *ptr = malloc(nmemb * sizeof(int));
+	unsigned int *ptr = malloc(nmemb * sizeof(unsigned int));
 
 	return (ptr);
 }
