@@ -7,6 +7,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (ptr == NULL)
 		return (NULL);
-
+	
+	free(ptr);
 	return (ptr);
 }
