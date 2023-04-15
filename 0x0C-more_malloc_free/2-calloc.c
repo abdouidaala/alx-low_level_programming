@@ -13,10 +13,14 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	ptr = malloc(nmemb * size);
 
-	memset(ptr, 0, nmemb * size);
-
 	if (ptr == NULL)
+	{
 		return (NULL);
+	}
+	else
+	{
+		memset(ptr, 0, nmemb * size);
+	}
 
 	return (ptr);
 }
