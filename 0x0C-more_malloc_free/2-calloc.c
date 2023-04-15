@@ -6,13 +6,20 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	int *ptr = malloc(nmemb * size);
 
-	memset(ptr, 0, nmemb * size);
-
 	if (ptr == NULL)
+	{
 		return (NULL);
-
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-
-	return (ptr);
+	}
+	else
+	{
+		if (nmemb > 0 && size > 0)
+		{
+			memset(ptr, 0, nmemb * size);
+			return (ptr);
+		}
+		else
+		{
+			return (NULL);
+		}
+	}
 }
