@@ -1,8 +1,13 @@
-#include <unistd.h>
-#include <string.h>
 
 int main(void)
 {
-	write(1, __FILE__, strlen(__FILE__));
+	char *ptr = __FILE__;
+	int i = 0;
+
+	while (ptr[i])
+	{
+		_putchar(ptr[i]);
+		i++;
+	}
 	return (0);
 }
