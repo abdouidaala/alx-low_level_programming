@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 
 int main(void)
 {
@@ -7,7 +7,7 @@ int main(void)
 
 	while (ptr[i])
 	{
-		_putchar(ptr[i]);
+		putchar(ptr[i]);
 		i++;
 	}
 	return (0);
