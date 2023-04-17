@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+ * main - Prints the name of the file of the program
+ *        was compiled from, followed by a new line.
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
 	char *ptr = __FILE__;
@@ -10,5 +16,6 @@ int main(void)
 		putchar(ptr[i]);
 		i++;
 	}
+	putchar('\n');
 	return (0);
 }
