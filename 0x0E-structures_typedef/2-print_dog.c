@@ -6,7 +6,6 @@ void print_dog(struct dog *d)
 {
 	if (d == NULL)
 		exit(1);
-	d->name = malloc(strlen(name) + 1);
 	if (d->name == NULL)
 	{
 		printf("Name: (nil)\n");
@@ -15,15 +14,9 @@ void print_dog(struct dog *d)
 	{
 		printf("Name: %s\n", d->name);
 	}
-	if (d->age == NULL)
-	{
-		printf("Age: (nil)\n");
-	}
-	else
-	{
-		printf("Age: %f\n", d->age);
-	}
-	d->owner = malloc(strlen(owner) + 1);
+
+	printf("Age: %f\n", d->age);
+
 	if (d->owner == NULL)
 	{
 		printf("Owner: (nil)\n");
