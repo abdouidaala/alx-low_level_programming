@@ -11,4 +11,9 @@
  *                     the cmp function does not return 0.
  */
 int int_index(int *array, int size, int (*cmp)(int))
-{}
+{
+	int i;
+
+	for (i = 0; i < size; i++)
+		cmp(array[i]);
+}
