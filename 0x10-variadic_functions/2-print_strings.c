@@ -26,7 +26,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 				printf("%s", separator);
 		s = va_arg(args, char *);
 		if (s == NULL)
-			return;
+			return (NULL);
 		printf("%s", s);
 	}
 
