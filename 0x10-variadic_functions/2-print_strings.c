@@ -20,7 +20,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		if (i >= 1)
-			printf("%s", separator);
+			if (separator != NULL)
+				printf("%s", separator);
 		printf("%s", va_arg(args, char *));
 	}
 
