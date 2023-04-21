@@ -31,6 +31,8 @@ void print_all(const char * const format, ...)
 			case 's':
 				printf("%s", va_arg(args, char *));
 				break;
+			default:
+				break;
 		}
 		if (i < (len - 1))
 			printf(", ");
