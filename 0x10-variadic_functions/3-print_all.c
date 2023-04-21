@@ -14,6 +14,7 @@ void print_all(const char * const format, ...)
 	int i;
 	unsigned int j;
 	char ifcs[] = "ifcs";
+	char *str;
 
 	va_start(args, format);
 	i = 0;
@@ -31,7 +32,11 @@ void print_all(const char * const format, ...)
 				printf("%c", va_arg(args, int));
 				break;
 			case 's':
-				printf("%s", va_arg(args, char *));
+				str = va_arg(args, char *);
+				if (str == NULL)
+					printf("(nil)");
+				else
+					printf("%s", str);
 				break;
 			default:
 				break;
