@@ -3,6 +3,10 @@
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * print_all - prints anything(any data type)
+ * @format: pointer to string of data format types
+ */
 void print_all(const char * const format, ...)
 {
         va_list args;
