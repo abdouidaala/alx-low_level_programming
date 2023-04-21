@@ -32,6 +32,8 @@ void print_all(const char * const format, ...)
 				printf("%s", va_arg(args, char *));
 				break;
 		}
+		if (i < (len - 1))
+			printf(", ");
 		i++;
 	}
 	va_end(args);
