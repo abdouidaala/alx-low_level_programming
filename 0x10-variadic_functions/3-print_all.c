@@ -40,7 +40,7 @@ void print_all(const char * const format, ...)
 				sep = 1;
 				break;
 		}
-		while (i < (strlen(format) - 1) && sep != 1)
+		if (i < (strlen(format) - 1) && sep != 1)
 			printf(", ");
 		i++;
 	}
