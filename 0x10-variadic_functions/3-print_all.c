@@ -10,14 +10,13 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i = 0, len = strlen(format);
-	unsigned int j;
-	char ifcs[] = "ifcs";
+	int i = 0, sep;
 	char *str;
 
 	va_start(args, format);
-	while ((i < len) && format != NULL)
+	while (format[i] && format != NULL)
 	{
+		sep = 0;
 		switch (format[i])
 		{
 			case 'i':
@@ -35,14 +34,12 @@ void print_all(const char * const format, ...)
 					str = "(nil)";
 				printf("%s", str);
 				break;
+			default:
+				sep = 1;
+				break;
 		}
-		j = 0;
-		while (j < strlen(ifcs))
-		{
-			if ((ifcs[j] == format[i]) && i < (len - 1))
-				printf(", ");
-			j++;
-		}
+		if (i < (strlen(format) - 1) && sep != 1)
+			printf(", ");
 		i++;
 	}
 	va_end(args);
