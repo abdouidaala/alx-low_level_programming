@@ -10,13 +10,12 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int len = strlen(format);
-	int i;
+	int i = 0, len = strlen(format);
 	unsigned int j;
 	char ifcs[] = "ifcs";
+	char *str;
 
 	va_start(args, format);
-	i = 0;
 	while (i < len)
 	{
 		switch (format[i])
@@ -31,7 +30,12 @@ void print_all(const char * const format, ...)
 				printf("%c", va_arg(args, int));
 				break;
 			case 's':
-				printf("%s", va_arg(args, char *));
+				str = va_arg(args, char *);
+				if (str == NULL)
+				{
+					printf("(nil)");
+				}
+				printf("%s", str);
 				break;
 			default:
 				break;
