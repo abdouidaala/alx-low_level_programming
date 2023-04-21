@@ -35,8 +35,6 @@ void print_all(const char * const format, ...)
 					str = "(nil)";
 				printf("%s", str);
 				break;
-			default:
-				break;
 		}
 		j = 0;
 		while (j < strlen(ifcs))
