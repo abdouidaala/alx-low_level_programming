@@ -31,7 +31,7 @@ void print_all(const char * const format, ...)
 				printf("%c", va_arg(args, int));
 				break;
 			case 's':
-				if (str == NULL)
+				if (va_arg(args, char *) == NULL)
 				{
 					printf("(nil)");
 					return (1);
