@@ -12,6 +12,8 @@ void print_all(const char * const format, ...)
 	va_list args;
 	int len = strlen(format);
 	int i;
+	unsigned int j;
+	char ifcs[] = "ifcs";
 
 	va_start(args, format);
 	i = 0;
@@ -34,8 +36,13 @@ void print_all(const char * const format, ...)
 			default:
 				break;
 		}
-		if (i < (len - 1))
-			printf(", ");
+		j = 0;
+		while (j < strlen(ifcs))
+		{
+			if ((ifcs[j] == format[i]) && i < (len - 1))
+				printf(", ");
+			j++;
+		}
 		i++;
 	}
 	va_end(args);
