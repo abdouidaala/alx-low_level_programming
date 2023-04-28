@@ -7,5 +7,7 @@
  */
 void free_list(list_t *head)
 {
+	if (!(head->str))
+		free(head);
 	free(head);
 }
