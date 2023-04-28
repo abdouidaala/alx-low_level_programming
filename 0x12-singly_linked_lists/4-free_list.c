@@ -2,6 +2,9 @@
 
 void free_list(list_t *head)
 {
-	if (head == NULL)
-		free(head);
+	list_t *ptr = malloc(sizeof(list_t));
+
+	head = ptr;
+	if (ptr == NULL)
+		free(ptr);
 }
