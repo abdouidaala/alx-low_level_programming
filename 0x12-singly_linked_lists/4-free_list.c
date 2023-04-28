@@ -8,6 +8,5 @@ void free_list(list_t *head)
 	if (ptr == NULL)
 	{
 		free(head);
-		free(ptr);
 	}
 }
