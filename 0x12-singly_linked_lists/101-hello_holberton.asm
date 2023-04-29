@@ -9,7 +9,7 @@ section .text
 		int 0x80
 
 		mov eax, 1
-		int 0x080
+		int 0x80
 
 section .data
 	msg db "Hello, Holberton", 0xa
