@@ -3,9 +3,9 @@ section .data
 	len: equ $-msg
 
 secion .text
-	global _start
+	global my_start
 
-	_start:
+	my_start:
 		mov edx, len
 		mov ecx, msg
 		mov ebx, 1
