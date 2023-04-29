@@ -1,8 +1,8 @@
-section.data
+section.data:
 	msg: db "Hello, Holberton", 10
 	len: equ $-msg
 
-section.text
+section.text:
 	global my_start
 
 	my_start:
