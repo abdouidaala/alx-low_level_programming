@@ -1,8 +1,4 @@
-section.data:
-	msg: db "Hello, Holberton", 10
-	len: equ $-msg
-
-section.text:
+section .text
 	global my_start
 
 	my_start:
@@ -14,3 +10,7 @@ section.text:
 
 		mov eax, 1
 		int 0x080
+
+section .data
+	msg db "Hello, Holberton", 0xa
+	len equ $ - msg
