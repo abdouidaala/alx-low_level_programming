@@ -13,8 +13,8 @@ int pop_listint(listint_t **head)
 
 	if (*head == NULL)
 		return (0);
-	if ((*head).next == NULL)
-		data = (*head).n;
+	if ((*head)->next == NULL)
+		data = (*head)->n;
 	ptr = *head;
 	while (ptr)
 	{
