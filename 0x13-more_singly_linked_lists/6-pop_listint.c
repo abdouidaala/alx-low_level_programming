@@ -23,6 +23,7 @@ int pop_listint(listint_t **head)
 		free(*head);
 		*head = ptr;
 	}
+	free(ptr);
 	*head = NULL;
 
 	return (data);
