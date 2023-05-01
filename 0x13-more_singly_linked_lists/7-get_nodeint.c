@@ -14,8 +14,6 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	if (!head)
 		return (NULL);
-	if (head->next == NULL)
-		return (head);
 	while (head && count <= index)
 	{
 		ptr = head;
