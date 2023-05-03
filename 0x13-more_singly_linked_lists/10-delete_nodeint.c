@@ -7,6 +7,7 @@
  *
  * Return: pointer to the index node
  */
+size_t listint_len(const listint_t *h);
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *prev = *head, *curr = *head;
