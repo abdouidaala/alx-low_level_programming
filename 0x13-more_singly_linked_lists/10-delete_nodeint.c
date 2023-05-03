@@ -31,9 +31,9 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 			curr = NULL;
 			return (1);
 		}
+		if (index > i)
+			return (-1);
 		prev = prev->next;
 	}
-	if (index > i)
-		return (-1);
 	return (-1);
 }
