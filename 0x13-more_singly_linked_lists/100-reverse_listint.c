@@ -18,6 +18,5 @@ listint_t *reverse_listint(listint_t **head)
 		(*head) = ptr;
 	}
 	(*head) = tmp;
-	free(ptr);
 	return (*head);
 }
