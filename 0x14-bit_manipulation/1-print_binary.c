@@ -7,7 +7,7 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int mask = 1, lg, result;
+	unsigned long int mask = 1, result;
 
 	if (n == 0)
 		_putchar('0');
