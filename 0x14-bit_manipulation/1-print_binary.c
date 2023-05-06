@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * print_binary - prints the binary representation of a number
@@ -7,7 +8,18 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int mask = 1, result;
+	unsigned long int mask = 1, lg, result;
+
+	if (n == ULONG_MAX)
+	{
+		lg = ULONG_MAX;
+		while (lg)
+		{
+			if (lg & n)
+				_putchar('1');
+			lg >>= 1;
+		}
+	}
 
 	if (n == 0)
 		_putchar('0');
