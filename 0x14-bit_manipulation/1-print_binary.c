@@ -17,9 +17,9 @@ void print_binary(unsigned long int n)
 	while (result)
 	{
 		if (result & n)
-			printf("%c", '1');
+			putchar('1');
 		else
-			printf("%c", '0');
+			putchar('0');
 
 		result >>= 1;
 	}
