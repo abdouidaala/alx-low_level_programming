@@ -9,10 +9,12 @@ void print_binary(unsigned long int n)
 {
 	unsigned long int mask = 1, result;
 
+	if (n == 0)
+		_putchar('0');
 	while (mask <= n)
 		mask <<= 1;
 
-	result = mask;
+	result = mask >> 1;
 	while (result)
 	{
 		if (result & n)
