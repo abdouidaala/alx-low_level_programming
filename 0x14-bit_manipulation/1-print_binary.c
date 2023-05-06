@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <unistd.h>
 /**
  * print_binary - prints the binary representation of a number
  * @n: num of prented
@@ -16,9 +16,9 @@ void print_binary(unsigned long int n)
 	while (result)
 	{
 		if (result & n)
-			_putchar('1');
+			putchar('1');
 		else
-			_putchar('0');
+			putchar('0');
 
 		result >>= 1;
 	}
