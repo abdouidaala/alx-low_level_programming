@@ -15,7 +15,13 @@ void *exit_97(void)
 }
 int main(int argc, char *argv[])
 {
-	if (argc != 3)
-		exit_97();
-	return (0);
+    int file_from, file_to;
+
+    if (argc != 3)
+        exit_97();
+    file_from = open(argv[1], O_RDONLY);
+    file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+    close(file_from);
+    close(file_to);
+    return (0);
 }
