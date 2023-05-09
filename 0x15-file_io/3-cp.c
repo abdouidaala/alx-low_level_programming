@@ -15,8 +15,6 @@ void *exit_97(void)
 }
 int main(int argc, char *argv[])
 {
-	int file_from, file_to;
-
 	if (argc != 3)
 		exit_97();
 	return (0);
