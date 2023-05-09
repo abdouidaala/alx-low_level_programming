@@ -12,17 +12,19 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	ssize_t bytes;
-	char buffer[1024];
+	ssize_t r, w;
+	char *buffer;
 
 	if (!filename || !letters)
 		return (0);
 
-	fd = open(filename, O_RDWR);
-	bytes = read(fd, buffer, letters);
-	bytes = write(1, buffer, bytes);
+	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
+	buffer = malloc(sizeof(char) * letters);
+	r = read(fd, buffer, letters);
+	w = write(1, buffer, r);
+	free(buffer);
 	close(fd);
-	return (bytes);
+	return (w);
 }
