@@ -16,7 +16,8 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	if (!text_content)
 	{
-		fd1 = open(filename, O_CREAT, 0600);
+		fd1 = open(filename, O_WRONLY | O_CREAT, 0600);
+		write(1, "", 1);
 		close(fd1);
 	}
 
