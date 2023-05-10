@@ -51,11 +51,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, CAN_NOT_READ, argv[1]);
 		exit(98);
 	}
-	if (!(close(file_from)))
-	{
-		dprintf(STDERR_FILENO, CAN_NOT_CLOSE, file_from);
-		exit(100);
-	}
+	close(file_from);
 	close(file_to);
 	return (0);
 }
