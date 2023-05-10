@@ -53,5 +53,5 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, CAN_NOT_CLOSE, file_from);
 	if (file_to)
 		dprintf(STDERR_FILENO, CAN_NOT_CLOSE, file_from);
-	return (0);
+	exit(EXIT_SUCCESS);
 }
