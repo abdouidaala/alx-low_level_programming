@@ -1,18 +1,12 @@
 #include "main.h"
+#include <sys/stat.h>
 
-void *exit_97(void)
-{
-	char *msg = "Usage: cp file_from file_to\n";
-	int len = 0;
+#define ARGUMENTS_FAILS "Usage: cp file_from file_to\n"
+#define CAN_NOT_READ "Error: Can't read from file %s\n"
+#define CAN_NOT_WRITE "Error: Can't write to %s\n"
+#define CAN_NOT_CLOSE "Error: Can't close fd %d\n"
+#define PERMISSIONS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
 
-	if (msg)
-	{
-		while (msg[len])
-			len++;
-	}
-	write(STDERR_FILENO, msg, len);
-	exit(97);
-}
 int main(int argc, char *argv[])
 {
 	int file_from, file_to;
@@ -20,9 +14,12 @@ int main(int argc, char *argv[])
 	ssize_t r;
 
 	if (argc != 3)
-		exit_97();
+	{
+		dprintf(STDERR_FILENO, ARGUMENTS_FAILS);
+		exit(97);
+	}
 	file_from = open(argv[1], O_RDONLY);
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
 	buffer = malloc(sizeof(char) * 1024);
 	if (file_from == -1)
 	{
