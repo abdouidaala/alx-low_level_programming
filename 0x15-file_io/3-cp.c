@@ -32,13 +32,19 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
-	buffer = malloc(sizeof(char) * 1024);
-	while ((r = read(file_from, buffer, 1024)) > 0)
-		write(file_to, buffer, r);
+
 	if (file_to == -1)
 	{
 		dprintf(STDERR_FILENO, CAN_NOT_WRITE, argv[2]);
 		exit(99);
+	}
+	buffer = malloc(sizeof(char) * 1024);
+	while ((r = read(file_from, buffer, 1024)) > 0)
+		write(file_to, buffer, r);
+	if (r == -1)
+	{
+		dprintf(STDERR_FILENO, CAN_NOT_READ, argv[1]);
+		exit(98);
 	}
 	free(buffer);
 	close(file_from);
