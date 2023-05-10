@@ -51,5 +51,7 @@ int main(int argc, char *argv[])
 	}
 	close_from = close(file_from);
 	close_to = close(file_to);
+	close(file_from);
+	close(file_to);
 	return (0);
 }
