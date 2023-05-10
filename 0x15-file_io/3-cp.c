@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 {
 	int file_from, file_to;
 	char *buffer;
-	ssize_t r, w;
+	ssize_t r;
 
 	if (argc != 3)
 	{
@@ -33,9 +33,9 @@ int main(int argc, char *argv[])
 	}
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
 	buffer = malloc(sizeof(char) * 1024);
-	r = read(file_from, buffer, 1024);
-	w = write(file_to, buffer, r);
-	if (file_to == -1 || w < 0)
+	while ((r = read(file_from, buffer, 1024)) > 0)
+		write(file_to, buffer, r);
+	if (file_to == -1)
 	{
 		dprintf(STDERR_FILENO, CAN_NOT_WRITE, argv[2]);
 		exit(99);
