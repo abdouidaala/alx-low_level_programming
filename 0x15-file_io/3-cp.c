@@ -49,9 +49,12 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, CAN_NOT_READ, argv[1]);
 		exit(98);
 	}
-	close(file_from);
-	close(file_to);
 	close_from = close(file_from);
 	close_to = close(file_to);
+	if ((close_from == -1) || (close_to == -1))
+	{
+		dprintf(STDERR_FILENO, CAN_NOT_CLOSE, file_from);
+		exit(100);
+	}
 	return (0);
 }
