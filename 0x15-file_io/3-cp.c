@@ -7,6 +7,13 @@
 #define CAN_NOT_CLOSE "Error: Can't close fd %d\n"
 #define PERMISSIONS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
 
+/**
+ * main - opies the content of a file to another file.
+ * @argc: number of arguments passed
+ * @argv: array of pointers to the arguments
+ *
+ * Return: 0 on success
+ */
 int main(int argc, char *argv[])
 {
 	int file_from, file_to;
