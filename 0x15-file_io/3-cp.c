@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 {
 	int file_from, file_to;
 	char *buffer;
-	ssize_t r, w;
+	ssize_t r;
 
 	if (argc != 3)
 		exit_97();
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	r = read(file_from, buffer, 1024);
-	w = write(file_to, buffer, r);
+	write(file_to, buffer, r);
 	free(buffer);
 	close(file_from);
 	close(file_to);
