@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	buffer = malloc(sizeof(char) * 1024);
 	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, CAN_NOT_READ, argv[1]);
 		exit(98);
 	}
 	r = read(file_from, buffer, 1024);
