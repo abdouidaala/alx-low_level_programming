@@ -1,11 +1,9 @@
 #include "main.h"
-#include <sys/stat.h>
 
 #define ARGUMENTS_FAILS "Usage: cp file_from file_to\n"
 #define CAN_NOT_READ "Error: Can't read from file %s\n"
 #define CAN_NOT_WRITE "Error: Can't write to %s\n"
 #define CAN_NOT_CLOSE "Error: Can't close fd %d\n"
-#define PERMISSIONS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
 
 /**
  * main - opies the content of a file to another file.
@@ -31,7 +29,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, CAN_NOT_READ, argv[1]);
 		exit(98);
 	}
-	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
 	if (file_to == -1)
 	{
