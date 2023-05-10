@@ -49,5 +49,7 @@ int main(int argc, char *argv[])
 	free(buffer);
 	close(file_from);
 	close(file_to);
+	if (file_from || file_to)
+		dprintf(STDERR_FILENO, CAN_NOT_CLOSE, file_from);
 	return (0);
 }
