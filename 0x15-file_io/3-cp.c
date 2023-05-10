@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 {
 	int file_from, file_to;
 	char *buffer;
-	ssize_t r;
+	ssize_t r, w;
 
 	if (argc != 3)
 	{
@@ -34,7 +34,12 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	r = read(file_from, buffer, 1024);
-	write(file_to, buffer, r);
+	w = write(file_to, buffer, r);
+	if (file_to == -1 || w < 0)
+	{
+		dprintf(STDERR_FILENO, CAN_NOT_WRITE, argv[2]);
+		exit(99);
+	}
 	free(buffer);
 	close(file_from);
 	close(file_to);
