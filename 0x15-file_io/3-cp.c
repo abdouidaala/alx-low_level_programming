@@ -39,7 +39,13 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	while ((r = read(file_from, buffer, 1024)) > 0)
-		write(file_to, buffer, r);
+	{
+		if (write(file_to, buffer, r) < 0)
+		{
+			dprintf(STDERR_FILENO, CAN_NOT_WRITE, argv[2]);
+			exit(99);
+		}
+	}
 	if (r == -1)
 	{
 		dprintf(STDERR_FILENO, CAN_NOT_READ, argv[1]);
