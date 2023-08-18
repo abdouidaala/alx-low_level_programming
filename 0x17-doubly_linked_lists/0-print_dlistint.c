@@ -25,28 +25,12 @@ size_t print_dlistint(const dlistint_t *h)
  */
 size_t _print_dlistint_backward(dlistint_t *h)
 {
-	size_t len = 0;
-	dlistint_t *ptr1, *ptr2;
+	size_t len;
 
-	ptr1 = h;
-	ptr2 = ptr1->next;
-	ptr1->next = NULL;
-	ptr1->prev = ptr2;
+	if (h == NULL)
+		return 0;
+	len = _print_dlistint_backward(h->next);
+	printf("%d\n", h->n);
 
-	while (ptr2)
-	{
-		ptr2->prev = ptr2->next;
-		ptr2->next = ptr1;
-		ptr1 = ptr2;
-		ptr2 = ptr2->prev;
-	}
-	h = ptr1;
-	while (h)
-	{
-		printf("%d\n", h->n);
-		len++;
-		h = h->next;
-	}
-
-	return (len);
+	return len + 1;
 }
