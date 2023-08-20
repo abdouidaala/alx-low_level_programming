@@ -36,6 +36,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		ptr = ptr->next;
 	}
 	if (idx > i)
+	{
+		free(new);
 		return (NULL);
+	}
 	return (*h);
 }
