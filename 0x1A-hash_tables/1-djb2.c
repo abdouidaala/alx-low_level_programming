@@ -12,7 +12,7 @@ unsigned long int hash_djb2(const unsigned char *str)
 	int c;
 
 	if (!str)
-		return (hash);
+		return (0);
 	for (c = *str; *str; str++)
 		hash = (hash * 33) + c;
 
