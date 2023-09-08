@@ -11,19 +11,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	char *copy_key = NULL;
 	unsigned long int index;
-	hash_node_t *new, *temp;
+	hash_node_t *new;
 
 	copy_key = strdup(key);
 	index = key_index((const unsigned char *)copy_key, ht->size);
 	if (!copy_key)
 		return (0);
-	temp = ht->array[index];
-	while (temp)
-	{
-		if (strcmp(temp->key, strdup(key)) == 0)
-			printf("NICE\n");
-		temp = temp->next;
-	}
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
 		return (0);
