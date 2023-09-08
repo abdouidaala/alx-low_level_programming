@@ -21,17 +21,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	while (temp)
 	{
 		if (strcmp(temp->key, strdup(key)) == 0)
-		{
-			new = malloc(sizeof(hash_node_t));
-			if (!new)
-				return (0);
-			new->key = strdup(key);
-			new->value = strdup(value);
-			new->next = ht->array[index];
-			ht->array[index] = new;
-		}
+			printf("NICE\n");
 		temp = temp->next;
 	}
+	new = malloc(sizeof(hash_node_t));
+	if (!new)
+		return (0);
+	new->key = strdup(key);
+	new->value = strdup(value);
+	new->next = ht->array[index];
+	ht->array[index] = new;
 
 	free(copy_key);
 
