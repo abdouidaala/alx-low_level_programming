@@ -11,19 +11,27 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	char *copy_key = NULL;
 	unsigned long int index;
-	hash_node_t *new;
+	hash_node_t *new, *temp;
 
-	if (!key)
-		return (0);
-	new = malloc(sizeof(hash_node_t));
-	if (!new)
-		return (0);
 	copy_key = strdup(key);
 	index = key_index((const unsigned char *)copy_key, ht->size);
-	new->key = strdup(key);
-	new->value = strdup(value);
-	new->next = ht->array[index];
-	ht->array[index] = new;
+	if (!copy_key)
+		return (0);
+	temp = ht->array[index];
+	while (temp)
+	{
+		if (strcmp(temp->key, strdup(key)) == 0)
+		{
+			new = malloc(sizeof(hash_node_t));
+			if (!new)
+				return (0);
+			new->key = strdup(key);
+			new->value = strdup(value);
+			new->next = ht->array[index];
+			ht->array[index] = new;
+		}
+		temp = temp->next;
+	}
 
 	free(copy_key);
 
