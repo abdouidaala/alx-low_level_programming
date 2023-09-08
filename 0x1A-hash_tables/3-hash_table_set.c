@@ -1,5 +1,12 @@
 #include "hash_tables.h"
 
+/**
+ * hash_table_set - add an element to the hash table
+ * @ht: the hash table
+ * @key: the key, it can not be an empty string
+ * @value: the value of the key, it must be duplicated
+ * Return: 1 if it succeeded, 0 otherwise
+ */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	char *copy_key = NULL;
