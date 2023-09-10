@@ -31,7 +31,3 @@ void hash_table_print(const hash_table_t *ht)
 	}
 	fprintf(stdout, "}\n");
 }
-
-/**
- * {'Betty': 'Cool', 'python': 'awesome', 'Bob': 'and Kris love asm', '98': 'Battery Street', 'N': 'queens', 'c': 'fun', 'Asterix': 'Obelix'}
- */
