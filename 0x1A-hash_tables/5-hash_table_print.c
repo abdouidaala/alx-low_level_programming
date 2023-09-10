@@ -1,5 +1,4 @@
 #include "hash_tables.h"
-#include <unistd.h>
 
 /**
  * hash_table_print - print a hash table
@@ -13,7 +12,6 @@ void hash_table_print(const hash_table_t *ht)
 
 	if (!ht)
 		return;
-
 	fprintf(stdout, "{");
 	ptr = 0;
 	while (i < ht->size)
