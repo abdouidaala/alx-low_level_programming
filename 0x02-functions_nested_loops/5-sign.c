@@ -1,21 +1,20 @@
 #include "main.h"
 
 /**
- * print_sign - Print the sign of a number
+ * @brief print_sign - Print the sign of a number
  *
- * @r: Number
+ * @param n Number
  *
- * Return: 1 (is greater that zero) OR 0 (is zero)
- * OR -1 (is less that zero)
+ * @return 1 (n > 0) OR 0 (n == 0) OR -1 (n < 0)
  */
-int print_sign(int r)
+int print_sign(int n)
 {
-	if (r > 0)
+	if (n > 0)
 	{
 		_putchar('+');
 		return (1);
 	}
-	else if (r == 0)
+	else if (n == 0)
 	{
 		_putchar('0');
 		return (0);

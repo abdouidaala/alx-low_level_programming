@@ -1,24 +1,16 @@
 #include "main.h"
 
 /**
- * _isalpha - Checks for Alphabetic Characters
+ * @brief _isalpha - Checks for Alphabetic Characters
  *
- * @r: Alphabetic character
+ * @param c Alphabetic character
  *
- * Return: 1 (Success) OR 0 (Failure)
+ * @return 1 (Success) OR 0 (Failure)
  */
-int _isalpha(int r)
+int _isalpha(int c)
 {
-	if (r >= 65 && r <= 90)
-	{
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
-	}
-	else if (r >= 97 && r <= 122)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+
+	return (0);
 }

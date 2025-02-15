@@ -1,21 +1,16 @@
 #include "main.h"
 
 /**
- * _islower - Checks for lowercase character
+ * @brief _islower - Checks for lowercase character
  *
- * @r: Number to be checked
+ * @param n Number to be checked
  *
- * Return: 1 (Success) OR 0 (Failure)
+ * @return 1 (Success) OR 0 (Failure)
  */
-int _islower(int r)
+int _islower(int n)
 {
-	if (r >= 97 && r <= 122)
-	{
+	if (n >= 'a' && n <= 'z')
 		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-	_putchar('\n');
+
+	return (0);
 }
