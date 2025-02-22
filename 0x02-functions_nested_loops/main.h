@@ -17,5 +17,6 @@ int add(int, int);
 void print_to_98(int n);
 void print_times_table(int n);
 void fibonacci(void);
+void sum_natural_nums(int num1, int num2, int max);
 
 #endif /* MAIN_H */
