@@ -15,9 +15,9 @@ int main(void)
 /**
  * @brief sum_natural_nums - Print the sum of all the multiples of num1 or num2 below max (excluded).
  *
- * @param num1
- * @param num2
- * @param max
+ * @param num1 First multiple
+ * @param num2 Second multiple
+ * @param max Upper limit (excluded)
  */
 void sum_natural_nums(int num1, int num2, int n_max)
 {
