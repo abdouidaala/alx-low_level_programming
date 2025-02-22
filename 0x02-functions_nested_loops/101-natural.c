@@ -19,20 +19,16 @@ int main(void)
  * @param num2
  * @param max
  */
-void sum_natural_nums(int num1, int num2, int max)
+void sum_natural_nums(int num1, int num2, int n_max)
 {
-	int n_times = 1;
 	int sum = 0;
+	int max = n_max - 1;
 
-	while (num1 * n_times < max || num2 * n_times < max)
+	while (max > 0)
 	{
-		if (num1 * n_times < max)
-			sum += num1 * n_times;
-		if (num2 * n_times < max)
-			sum += num2 * n_times;
-		if (num1 * n_times == num2 * n_times)
-			sum -= num1 * n_times;
-		n_times++;
+		if (!(max % num1) || !(max % num2))
+			sum += max;
+		max--;
 	}
 
 	printf("%d\n", sum);
