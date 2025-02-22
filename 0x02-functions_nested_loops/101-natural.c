@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	sum_natural_nums(5, 3, 10);
+	sum_natural_nums(5, 3, 1024);
 
 	return (0);
 }
