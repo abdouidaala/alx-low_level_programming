@@ -1,24 +1,24 @@
 #include "main.h"
 
 /**
- * more_numbers - Print 10x the numbers 0-14
+ * @brief more_numbers - Print 10x the numbers 0-14
  *
- * Return: 10x the numbers 0-14
+ * @return 10x the numbers 0-14
  */
 void more_numbers(void)
 {
-	int i, j;
+	int i, n;
 
-	for (i = 1; i <= 10; i++)
+	for (i = 0; i < 10; i++)
 	{
-		for (j = 0; j <= 14; j++)
+		for (n = 0; n <= 14; n++)
 		{
-			if (j >= 10)
-			{
-				_putchar('1');
-			}
-			_putchar((j % 10) + '0');
+			if (n > 9)
+				_putchar(n / 10 + '0');
+
+			_putchar(n % 10 + '0');
 		}
+
 		_putchar('\n');
 	}
 }
