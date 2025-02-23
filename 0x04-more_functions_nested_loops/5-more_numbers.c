@@ -3,7 +3,7 @@
 /**
  * @brief more_numbers - Print 10x the numbers 0-14
  *
- * @return 10x the numbers 0-14
+ * @return void
  */
 void more_numbers(void)
 {
