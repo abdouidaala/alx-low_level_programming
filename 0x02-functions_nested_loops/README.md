@@ -1,5 +1,4 @@
-
-# Project Title
+# 0x02. C - Functions, nested loops
 
 ## Objectives
 - What are nested loops and how to use them
