@@ -18,5 +18,6 @@ void print_to_98(int n);
 void print_times_table(int n);
 void fibonacci(void);
 void sum_natural_nums(int num1, int num2, int max);
+void fibonacci_even_sum(void);
 
 #endif /* MAIN_H */
