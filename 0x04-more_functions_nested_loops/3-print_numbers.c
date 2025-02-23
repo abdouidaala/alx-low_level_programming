@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * @brief print_numbers - Prints 0 to 9
+ * @brief print_numbers - Print 0 to 9
  *
- * @return The numbers 0 - 9
+ * @return void
  */
 void print_numbers(void)
 {
