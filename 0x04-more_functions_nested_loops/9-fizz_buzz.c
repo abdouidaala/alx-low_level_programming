@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - Prints a Fizz Buzz program
+ * @brief main - Prints a Fizz Buzz program
  *
- * Return: Always 0 (Success)
+ * @return Always 0.
  */
 int main(void)
 {
@@ -13,28 +13,20 @@ int main(void)
 	{
 		f = i % 3;
 		b = i % 5;
+
 		if (f == 0 && b == 0)
-		{
 			printf("FizzBuzz");
-		}
 		else if (f == 0)
-		{
 			printf("Fizz");
-		}
 		else if (b == 0)
-		{
 			printf("Buzz");
-		}
 		else
-		{
 			printf("%d", i);
-		}
+
 		if (i != 100)
-		{
-			printf(" ");
-		}
+			putchar(' ');
 	}
-	printf("\n");
+	putchar('\n');
 
 	return (0);
 }
