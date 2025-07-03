@@ -19,16 +19,16 @@ int main(void)
  */
 void fibonacci(void)
 {
-	size_t n1 = 1, n2 = 2, n3 = 0, temp;
+	int n1 = 1, n2 = 2, n3 = 0, temp;
 
-	printf("%li, %li, ", n1, n2);
+	printf("%i, %i, ", n1, n2);
 
 	for (int i = 0; i < 98; i++)
 	{
 		n3 = n2 + n1;
 		if (i)
 			printf(", ");
-		printf("%li", n3);
+		printf("%i", n3);
 		temp = n3;
 		n1 = n2;
 		n2 = temp;
