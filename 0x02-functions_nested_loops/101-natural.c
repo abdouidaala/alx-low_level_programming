@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * @brief main - check the code
+ * main - check the code
  *
- * @return Always 0.
+ * Return:Always 0.
  */
 int main(void)
 {
@@ -13,11 +13,11 @@ int main(void)
 }
 
 /**
- * @brief sum_natural_nums - Print the sum of all the multiples of num1 or num2 below max (excluded).
+ * sum_natural_nums - Print sum of all the multiples of num1 or num2 <= max.
  *
- * @param num1 First multiple
- * @param num2 Second multiple
- * @param max Upper limit (excluded)
+ * @num1: First multiple
+ * @num2: Second multiple
+ * @n_max: Upper limit (excluded)
  */
 void sum_natural_nums(int num1, int num2, int n_max)
 {
