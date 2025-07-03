@@ -24,7 +24,7 @@ void fibonacci(void)
 
 	printf("%li, %li, ", n1, n2);
 
-	for (; i < 98; i++)
+	for (; i < 97; i++)
 	{
 		n3 = n2 + n1;
 		if (i)
