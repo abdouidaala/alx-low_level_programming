@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * @brief print_triangle - Draw a diagonal line on the terminal
+ * print_triangle - Draw a diagonal line on the terminal
  *
- * @param size is the size of the triangle
+ * @size: is the size of the triangle
  *
- * @return void
+ * Return: void
  */
 void print_triangle(int size)
 {
