@@ -4,9 +4,9 @@
 bool is_prime(int n);
 
 /**
- * @brief main - print the largest prime factor of the number 612852475143.
+ * main - print the largest prime factor of the number 612852475143.
  *
- * @return Always 0.
+ * Return: Always 0.
  */
 int main(void)
 {
@@ -26,11 +26,11 @@ int main(void)
 }
 
 /**
- * @brief is_prime - Checks if a given integer is a prime number.
+ * is_prime - Checks if a given integer is a prime number.
  *
- * @param n The integer to check.
+ * @n: The integer to check.
  *
- * @return true if n is a prime number, false otherwise.
+ * Return: true if n is a prime number, false otherwise.
  */
 bool is_prime(int n)
 {
@@ -38,6 +38,6 @@ bool is_prime(int n)
 
 	for (; i <= n / 2; i++)
 		if (!(n % i))
-			return false;
-	return true;
+			return (false);
+	return (true);
 }
