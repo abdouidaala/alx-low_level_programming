@@ -11,19 +11,16 @@ bool is_prime(int n);
 int main(void)
 {
 	long int n = 612852475143;
-	int i = 2;
+	long int i = 2;
 
 	while (n > 1)
 	{
 		if (!(n % i) && is_prime(i))
-		{
-			printf("%i ", i);
 			n /= i;
-		}
 		else
 			i++;
 	}
-	putchar('\n');
+	printf("%li\n", i);
 
 	return (0);
 }
