@@ -19,7 +19,7 @@ int main(void)
  */
 void fibonacci(void)
 {
-	int n1 = 1, n2 = 2, n3 = 0, temp;
+	size_t n1 = 1, n2 = 2, n3 = 0, temp;
 	int i = 0;
 
 	printf("%i, %i, ", n1, n2);
