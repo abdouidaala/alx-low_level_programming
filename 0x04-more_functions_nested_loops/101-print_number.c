@@ -12,6 +12,7 @@
 void print_number(int n)
 {
 	bool s = n < 10 && n ? 1 : 0;
+
 	if (n < 0)
 	{
 		n = -n;
