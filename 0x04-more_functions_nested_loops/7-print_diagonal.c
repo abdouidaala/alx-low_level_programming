@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * @brief print_diagonal - Draw a diagonal line on the terminal
+ * print_diagonal - Draw a diagonal line on the terminal
  *
- * @param n Number of times the character '\' should printed
+ * @n: Number of times the character '\' should printed
  *
- * @return void
+ * Return: void
  */
 void print_diagonal(int n)
 {
