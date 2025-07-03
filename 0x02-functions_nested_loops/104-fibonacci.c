@@ -20,10 +20,11 @@ int main(void)
 void fibonacci(void)
 {
 	int n1 = 1, n2 = 2, n3 = 0, temp;
+	int i = 0;
 
 	printf("%i, %i, ", n1, n2);
 
-	for (int i = 0; i < 98; i++)
+	for (; i < 98; i++)
 	{
 		n3 = n2 + n1;
 		if (i)
