@@ -1,29 +1,25 @@
 #include "main.h"
 
 /**
- * @brief main - check the code.
+ * main - check the code.
  *
- * @return Always 0.
+ * Return: Always 0.
  */
-int main()
+int main(void)
 {
 	fibonacci_even_sum();
 
-	return 0;
+	return (0);
 }
 
 /**
- * @brief fibonacci_even_sum - print the sum of the even-valued terms
- * 			in the Fibonacci sequence below 4,000,000
+ * fibonacci_even_sum - print sum of even-valued terms in Fib-seq < 4000000
  *
- * @return void
+ * Return: void
  */
 void fibonacci_even_sum(void)
 {
-	size_t n1 = 0;
-	size_t n2 = 1;
-	size_t max = 0;
-	size_t result = 0;
+	size_t n1 = 0, n2 = 1, max = 0, result = 0;
 
 	while (1)
 	{
