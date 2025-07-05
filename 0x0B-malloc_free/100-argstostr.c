@@ -18,13 +18,21 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i, j;
+	int i, j, len = 0;
 	char *s, *ps;
 
 	if (!ac || !av)
 		return (NULL);
 
-	s = malloc(sizeof(char *) * ac);
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j]; j++)
+			len++;
+		len++;
+	}
+	len++;
+
+	s = malloc(sizeof(char) * len);
 
 	if (!s)
 	{
