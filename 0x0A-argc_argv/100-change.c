@@ -31,8 +31,7 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 
-	do
-	{
+	do {
 		if (cents - coins[i] < 0)
 			i++;
 		else
