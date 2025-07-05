@@ -42,5 +42,8 @@ char *argstostr(int ac, char **av)
 		*s++ = '\n';
 	}
 
+	if (!ps)
+		return (NULL);
+
 	return (ps);
 }
