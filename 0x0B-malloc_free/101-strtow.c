@@ -81,13 +81,13 @@ char **strtow(char *str)
 		if (str[i] == ' ')
 			continue;
 		m = i;
-		for (j = i, nChars = 0; str[j] != ' '; j++, i++, nChars++)
+		for (j = i, nChars = 0; str[j] && str[j] != ' '; j++, i++, nChars++)
 			;
 		pStr[k] = malloc(sizeof(char) * (nChars + 1));
 		if (!pStr[k])
 		{
-			for (; k >= 0; k--)
-				free(pStr[k]);
+			for (l = 0; l < k; l++)
+				free(pStr[l]);
 			free(pStr);
 			return (NULL);
 		}
