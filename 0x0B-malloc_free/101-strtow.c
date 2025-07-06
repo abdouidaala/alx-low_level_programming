@@ -2,7 +2,16 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdbool.h>
-#include <string.h>
+
+int length(const char *str)
+{
+	int i = 0;
+
+	for (; str[i]; i++)
+		;
+
+	return (i);
+}
 
 /**
  * is_empty - Checks if a string contains only space characters.
@@ -11,7 +20,7 @@
  * Return: true if the string is empty or contains only spaces,
  *         false if it contains any non-space character.
  */
-bool is_empty(char *str)
+bool is_empty(const char *str)
 {
 	int i = 0;
 
@@ -33,14 +42,13 @@ bool is_empty(char *str)
  */
 int count_words(const char *str)
 {
-	int nWords = 0;
-	size_t i = 0, j = 0;
+	int nWords = 0, i = 0, j = 0, len = length(str);
 
-	for (; i < strlen(str); i++)
+	for (; i < len; i++)
 	{
 		if (str[i] == ' ')
 			continue;
-		for (j = i; j < strlen(str) && str[j] != ' '; j++, i++)
+		for (j = i; str[j] && str[j] != ' '; j++, i++)
 			;
 		nWords++;
 	}
@@ -63,8 +71,7 @@ int count_words(const char *str)
  */
 char **strtow(char *str)
 {
-	size_t i = 0, j = 0;
-	int k = 0, l = 0, m = 0;
+	int i = 0, j = 0, k = 0, l = 0, m = 0, len = length(str);
 	int nWords = 0, nChars = 0;
 	char **pStr = NULL;
 
@@ -77,12 +84,12 @@ char **strtow(char *str)
 	if (!pStr)
 		return (NULL);
 
-	for (k = 0; i < strlen(str); i++)
+	for (k = 0; i < len; i++)
 	{
 		if (str[i] == ' ')
 			continue;
 		m = i;
-		for (j = i, nChars = 0; j < strlen(str) && str[j] != ' '; j++, i++, nChars++)
+		for (j = i, nChars = 0; j < len && str[j] != ' '; j++, i++, nChars++)
 			;
 		pStr[k] = malloc(sizeof(char) * (nChars + 1));
 		if (!pStr[k])
