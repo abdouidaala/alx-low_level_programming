@@ -7,7 +7,7 @@
  * length - Calculates the length of a null-terminated string.
  * @str: Pointer to the input string.
  *
- * Return: The number of characters in the string (excluding the null terminator).
+ * Return: The number of characters in the string (excluding the '\0').
  */
 int length(const char *str)
 {
