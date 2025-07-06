@@ -71,10 +71,7 @@ char **strtow(char *str)
 	pStr = malloc(sizeof(char *) * (nWords + 1));
 
 	if (!pStr)
-	{
-		free(pStr);
 		return (NULL);
-	}
 
 	for (k = 0; str[i]; i++)
 	{
@@ -88,7 +85,7 @@ char **strtow(char *str)
 		{
 			for (l = 0; l < k; l++)
 				free(pStr[l]);
-			free(pStr);
+
 			return (NULL);
 		}
 		for (l = 0; l < nChars; l++, m++)
