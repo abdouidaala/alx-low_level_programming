@@ -86,7 +86,9 @@ char **strtow(char *str)
 		pStr[k] = malloc(sizeof(char) * (nChars + 1));
 		if (!pStr[k])
 		{
-			free(pStr[k]);
+			for (; k >= 0; k--)
+				free(pStr[k]);
+			free(pStr);
 			return (NULL);
 		}
 		for (l = 0; l < nChars; l++, m++)
