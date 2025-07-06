@@ -81,7 +81,7 @@ char **strtow(char *str)
 		for (j = i, nChars = 0; str[j] != ' '; j++, i++, nChars++)
 			;
 		pStr[k] = malloc(sizeof(char) * (nChars + 1));
-		if (!pStr)
+		if (!pStr[k])
 			return (NULL);
 		for (l = 0; l < nChars; l++, m++)
 			pStr[k][l] = str[m];
