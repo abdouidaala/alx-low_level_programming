@@ -82,7 +82,10 @@ char **strtow(char *str)
 			;
 		pStr[k] = malloc(sizeof(char) * (nChars + 1));
 		if (!pStr[k])
+		{
+			free(pStr[k]);
 			return (NULL);
+		}
 		for (l = 0; l < nChars; l++, m++)
 			pStr[k][l] = str[m];
 		pStr[k][l] = '\0';
