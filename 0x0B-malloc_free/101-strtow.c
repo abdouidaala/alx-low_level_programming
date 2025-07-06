@@ -1,5 +1,26 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdbool.h>
+
+/**
+ * is_empty - Checks if a string contains only space characters.
+ * @str: Pointer to the input string to be checked.
+ *
+ * Return: true if the string is empty or contains only spaces,
+ *         false if it contains any non-space character.
+ */
+bool is_empty(char *str)
+{
+	int i = 0;
+
+	for (; str[i]; i++)
+	{
+		if (str[i] != ' ')
+			return (false);
+	}
+
+	return (true);
+}
 
 /**
  * count_words - Counts the number of words in a given string.
@@ -43,7 +64,7 @@ char **strtow(char *str)
 	int nWords = 0, nChars = 0;
 	char **pStr = NULL;
 
-	if (!str || !(*str))
+	if (!str || !(*str) || is_empty(str))
 		return (NULL);
 
 	nWords = count_words(str);
