@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+
 /**
  * is_empty - Checks if a string contains only space characters.
  * @str: Pointer to the input string to be checked.
@@ -32,13 +33,14 @@ bool is_empty(char *str)
  */
 int count_words(const char *str)
 {
-	int nWords = 0, i = 0, j = 0;
+	int nWords = 0;
+	size_t i = 0, j = 0;
 
-	for (; str[i]; i++)
+	for (; i < strlen(str); i++)
 	{
 		if (str[i] == ' ')
 			continue;
-		for (j = i; str[j] != ' '; j++, i++)
+		for (j = i; j < strlen(str) && str[j] != ' '; j++, i++)
 			;
 		nWords++;
 	}
@@ -61,8 +63,7 @@ int count_words(const char *str)
  */
 char **strtow(char *str)
 {
-	size_t i = 0;
-	size_t j = 0;
+	size_t i = 0, j = 0;
 	int k = 0, l = 0, m = 0;
 	int nWords = 0, nChars = 0;
 	char **pStr = NULL;
