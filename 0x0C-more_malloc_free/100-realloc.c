@@ -25,8 +25,9 @@ Don’t forget to free ptr when it makes sense
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *newPtr = NULL;
-	unsigned int min_size = 0;
+	char *a = NULL;
+	char *newPtr = NULL;
+	unsigned int min_size = 0, i = 0;
 
 	if (old_size == new_size)
 		return (ptr);
@@ -45,11 +46,14 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	{
 		/* Copy the minimum of old_size and new_size bytes */
 		min_size = old_size < new_size ? old_size : new_size;
-		memcpy(newPtr, ptr, min_size);
+		a = ptr;
+		for (; i < min_size; i++)
+			newPtr[i] = *a++;
+		/*memcpy(newPtr, ptr, min_size);*/
 		free(ptr);
 	}
 
-	return newPtr;
+	return (newPtr);
 	/*
 	unsigned int i = 0;
 	char *oPtr = ptr;
