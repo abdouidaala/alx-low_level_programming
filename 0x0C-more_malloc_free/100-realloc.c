@@ -20,14 +20,24 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (!nPtr)
 		return (NULL);
 
-	for (; i < old_size; i++)
+	if (!oPtr)
 	{
-		nPtr[i] = *oPtr;
-		*oPtr++ = '\0';
+		i = 0;
+		for (; i < new_size + old_size; i++)
+			nPtr[i] = 0;
 	}
-	free(ptr);
-	for (; i < new_size; i++)
-		nPtr[i] = 0;
+	else
+	{
+		i = 0;
+		for (; i < old_size; i++)
+		{
+			nPtr[i] = *oPtr;
+			*oPtr++ = '\0';
+		}
+		free(ptr);
+		for (; i < new_size; i++)
+			nPtr[i] = 0;
+	}
 
 	return (nPtr);
 }
