@@ -12,9 +12,9 @@
  *
  * Return: The converted long long integer value of the string.
  */
-long long int str_to_int(const char *str)
+long int str_to_int(const char *str)
 {
-	long long int i = 0, l, j = 1, n = 0;
+	long int i = 0, l, j = 1, n = 0;
 
 	while (str[i])
 		i++;
@@ -38,7 +38,7 @@ long long int str_to_int(const char *str)
  */
 int main(int ac, char *av[])
 {
-	long long int n1, n2;
+	long int n1, n2;
 
 	if (ac != 3)
 	{
@@ -48,7 +48,7 @@ int main(int ac, char *av[])
 
 	n1 = str_to_int(av[1]);
 	n2 = str_to_int(av[2]);
-	printf("%lld\n", n1 * n2);
+	printf("%ld\n", n1 * n2);
 
 	return (0);
 }
