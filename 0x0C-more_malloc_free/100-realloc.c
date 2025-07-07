@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <string.h>
 
 /**
  * Write a function that reallocates a memory block using malloc and free
@@ -24,6 +25,8 @@ Don’t forget to free ptr when it makes sense
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
+	void *newPtr = NULL;
+	unsigned int min_size = 0;
 
 	if (old_size == new_size)
 		return (ptr);
@@ -32,7 +35,21 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		free(ptr);
 		return (NULL);
 	}
-	return (ptr);
+
+	newPtr = malloc(new_size);
+
+	if (!newPtr)
+		return (NULL);
+
+	if (ptr)
+	{
+		/* Copy the minimum of old_size and new_size bytes */
+		min_size = old_size < new_size ? old_size : new_size;
+		memcpy(newPtr, ptr, min_size);
+		free(ptr);
+	}
+
+	return newPtr;
 	/*
 	unsigned int i = 0;
 	char *oPtr = ptr;
