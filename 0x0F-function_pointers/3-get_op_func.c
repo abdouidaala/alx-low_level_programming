@@ -18,6 +18,6 @@ int (*get_op_func(char *s))(int a, int b)
 		return (ops[i - 1].f);
 	}
 
-	puts("Error\n");
+	puts("Error");
 	exit(99);
 }

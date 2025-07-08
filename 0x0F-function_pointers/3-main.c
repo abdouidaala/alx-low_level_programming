@@ -8,7 +8,7 @@ int main(int ac, char *av[])
 
 	if (ac != 4)
 	{
-		puts("Error\n");
+		puts("Error");
 		return (98);
 	}
 
