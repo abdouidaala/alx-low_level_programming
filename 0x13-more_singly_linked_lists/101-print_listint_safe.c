@@ -3,13 +3,13 @@
 /**
  * print_listint_safe - print a listint_t linked list.
  *
- * @head a pointer to the first node
+ * @head: a pointer to the first node
  *
  * Return: the number of nodes in the list
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	listint_t *ptr = head;
+	const listint_t *ptr = head;
 	size_t size = 0;
 
 	while (ptr)
