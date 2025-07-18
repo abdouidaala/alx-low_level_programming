@@ -8,15 +8,19 @@
  *
  * Return: void
  */
-void print(const listint_t *head)
+size_t print(const listint_t *head)
 {
 	const listint_t *ptr = head;
+	size_t size = 0;
 
 	while (ptr)
 	{
 		printf("[%p] %d\n", (void *)ptr, ptr->n);
 		ptr = ptr->next;
+		size++;
 	}
+
+	return (size);
 }
 
 /**
@@ -46,7 +50,7 @@ size_t print_listint_safe(const listint_t *head)
 	} while (fast && fast->next);
 	slow = head;
 	if (!isLoop)
-		print(slow);
+		size = print(slow);
 	else
 	{
 		while (slow != fast)
