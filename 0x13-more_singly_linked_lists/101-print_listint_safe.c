@@ -14,6 +14,7 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *fast = head;
 	size_t size = 0;
 	bool isLoop = 0;
+	size_t i;
 
 	do
 	{
@@ -42,7 +43,7 @@ size_t print_listint_safe(const listint_t *head)
 			fast = fast->next;
 		}
 		slow = head;
-		int i = 0;
+		i = 0;
 		while (i <= size)
 		{
 			printf("[%p] %d\n", (void *)slow, slow->n);
