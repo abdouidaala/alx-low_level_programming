@@ -6,7 +6,7 @@
  *
  * @head: a pointer to the first node
  *
- * Return: void
+ * Return: size of the linked list
  */
 size_t print(const listint_t *head)
 {
@@ -38,7 +38,8 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (!head)
 		return (size);
-	do {
+	do
+	{
 		slow = slow->next;
 		fast = fast->next->next;
 		size++;
