@@ -32,6 +32,8 @@ size_t print_listint_safe(const listint_t *head)
 	size_t size = 0, i;
 	bool isLoop = 0;
 
+	if (!head)
+		return (size);
 	do {
 		slow = slow->next;
 		fast = fast->next->next;
