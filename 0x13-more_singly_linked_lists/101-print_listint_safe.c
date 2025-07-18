@@ -2,6 +2,24 @@
 #include <stdbool.h>
 
 /**
+ * print - a helper function to print a null-terminated linked list.
+ *
+ * @head: a pointer to the first node
+ *
+ * Return: void
+ */
+void print(const listint_t *head)
+{
+	const listint_t *ptr = head;
+
+	while (ptr)
+	{
+		printf("[%p] %d\n", (void *)ptr, ptr->n);
+		ptr = ptr->next;
+	}
+}
+
+/**
  * print_listint_safe - print a listint_t linked list.
  *
  * @head: a pointer to the first node
@@ -10,14 +28,11 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *slow = head;
-	const listint_t *fast = head;
-	size_t size = 0;
+	const listint_t *slow = head, *fast = head;
+	size_t size = 0, i;
 	bool isLoop = 0;
-	size_t i;
 
-	do
-	{
+	do {
 		slow = slow->next;
 		fast = fast->next->next;
 		size++;
@@ -29,11 +44,7 @@ size_t print_listint_safe(const listint_t *head)
 	} while (fast && fast->next);
 	slow = head;
 	if (!isLoop)
-		while (slow)
-		{
-			printf("[%p] %d\n", (void *)slow, slow->n);
-			slow = slow->next;
-		}
+		print(slow);
 	else
 	{
 		while (slow != fast)
