@@ -1,6 +1,13 @@
 #include "lists.h"
 #include <stdbool.h>
 
+/**
+ * free_helper - Deallocate memory used by a linked list
+ *
+ * @h: double pointer to a linked list
+ *
+ * Return: size of the list
+ */
 size_t free_helper(listint_t **h)
 {
 	listint_t *ptr = *h;
@@ -30,8 +37,9 @@ size_t free_listint_safe(listint_t **h)
 	size_t size = 0, i;
 	bool isLoop = 0;
 
-	do
-	{
+	if (!(ptr))
+		return (size);
+	do {
 		slow = slow->next;
 		fast = fast->next->next;
 		size++;
