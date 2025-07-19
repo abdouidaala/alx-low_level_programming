@@ -8,21 +8,21 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int mask = 1, result;
+	unsigned long int m = 1UL << (sizeof(unsigned long int) * 8 - 1);
+	int found = 0;
 
-	if (n == 0)
+	if (!n)
 		_putchar('0');
-	while (mask <= n)
-		mask <<= 1;
-
-	result = mask >> 1;
-	while (result)
+	while (m)
 	{
-		if (result & n)
+		if (m & n)
+		{
 			_putchar('1');
-		else
+			found = 1;
+		}
+		else if (found)
 			_putchar('0');
 
-		result >>= 1;
+		m >>= 1;
 	}
 }
