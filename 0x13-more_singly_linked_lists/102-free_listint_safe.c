@@ -27,7 +27,6 @@ size_t free_helper(listint_t **h)
 size_t free_listint_safe(listint_t **h)
 {
 	listint_t *ptr = *h, *slow = *h, *fast = *h;
-	// listint_t *x = h;
 	size_t size = 0, i;
 	bool isLoop = 0;
 
@@ -42,10 +41,8 @@ size_t free_listint_safe(listint_t **h)
 			break;
 		}
 	} while (fast && fast->next);
-	ptr = h;
 	if (!isLoop)
-		// size = free_helper(x);
-		size = free_helper(ptr);
+		size = free_helper(h);
 	else
 	{
 		slow = *h;
