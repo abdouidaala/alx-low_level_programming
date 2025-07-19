@@ -1,6 +1,22 @@
 #include "lists.h"
 #include <stdbool.h>
 
+size_t free_helper(listint_t **h)
+{
+	listint_t *ptr = *h;
+	size_t size = 0;
+
+	while (*h)
+	{
+		ptr = (*h)->next;
+		free(*h);
+		*h = ptr;
+		size++;
+	}
+
+	return (size);
+}
+
 /**
  * free_listint_safe - free a linked list with a loop
  *
@@ -11,6 +27,7 @@
 size_t free_listint_safe(listint_t **h)
 {
 	listint_t *ptr = *h, *slow = *h, *fast = *h;
+	// listint_t *x = h;
 	size_t size = 0, i;
 	bool isLoop = 0;
 
@@ -25,16 +42,10 @@ size_t free_listint_safe(listint_t **h)
 			break;
 		}
 	} while (fast && fast->next);
+	ptr = h;
 	if (!isLoop)
-	{
-		while (*h)
-		{
-			ptr = (*h)->next;
-			free(*h);
-			*h = ptr;
-			size++;
-		}
-	}
+		// size = free_helper(x);
+		size = free_helper(ptr);
 	else
 	{
 		slow = *h;
